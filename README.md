@@ -171,7 +171,7 @@ ID	Item Name	Location	Status
 3	Mobile Phone	Bus Stand	Found
 
 ### Project Structure
-
+```
 Smart-Lost-and-Found-OCR/
 │
 ├── app.py
@@ -182,7 +182,7 @@ Smart-Lost-and-Found-OCR/
 ├── README.md
 │
 └── .gitignore
-
+```
 app.py
 
 Contains the main Streamlit application.
