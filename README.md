@@ -39,82 +39,7 @@ https://lostfoundocr-adcjuhnivotsxkyitkjpmb.streamlit.app/
 
 ### How It Works
 
-┌──────────────────────────────┐
-│       User Reports Lost      │
-│            Item              │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│ Enter Item Details           │
-│ • Item Name                  │
-│ • Description                │
-│ • Identification Details     │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│     SQLite Database          │
-│  Store Lost Item Details     │
-│       Status = Lost          │
-└──────────────┬───────────────┘
-               │
-               │
-               ▼
-┌──────────────────────────────┐
-│      Item is Found           │
-│ User Uploads Image           │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│        OpenCV                │
-│ Image Preprocessing          │
-│ • Resize                     │
-│ • Grayscale                  │
-│ • Noise Reduction            │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│        EasyOCR               │
-│ Extract Text from Image      │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│ Compare Extracted Text       │
-│ with Lost Item Records       │
-│ from SQLite Database         │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│    Calculate Match Score     │
-└──────────────┬───────────────┘
-               │
-               ▼
-        ┌──────┴──────┐
-        │             │
-        ▼             ▼
-   Score ≥ 90%     Score < 90%
-        │             │
-        ▼             ▼
-┌───────────────┐  ┌─────────────────┐
-│ Strong Match  │  │ No Strong Match │
-└───────┬───────┘  └─────────────────┘
-        │
-        ▼
-┌──────────────────────────────┐
-│ Update Status                │
-│ Lost → Found                 │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│ Display in Found /           │
-│ Matched Items Section        │
-└──────────────────────────────┘
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/d17d2b1d-50bf-48bc-acdc-2f22b224ce39" />
 
 ### Main Modules
 1. Lost Item Registration
@@ -221,38 +146,7 @@ Since:
 the item is marked as Found.
 
 Status Flow
-Report Lost Item
-       |
-       v
-Store Item in Database
-       |
-       v
-Upload Found Item Image
-       |
-       v
-OpenCV Image Processing
-       |
-       v
-EasyOCR Text Extraction
-       |
-       v
-Compare With Lost Items
-       |
-       v
-Calculate Matching Score
-       |
-       v
-Is Score >= 90%?
-      / \
-    Yes  No
-     |    |
-     v    v
-  Mark   Show Possible
-  Found   Matches
-     |
-     v
-Found / Matched Items
-Database
+<img width="1027" height="2297" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/765a4795-9e54-45de-8f65-3b8aaa80a04c" />
 
 The application uses SQLite to store lost-item information.
 
