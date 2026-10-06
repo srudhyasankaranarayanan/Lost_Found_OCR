@@ -222,7 +222,7 @@ Git
 pip
 
 1. Clone the Repository
-git clone https://github.com/your-username/smart-lost-and-found-ocr.git
+git clone https://github.com/srudhyasankaranarayanan/smart-lost-and-found-ocr.git
 2. Open the Project Folder
 cd smart-lost-and-found-ocr
 3. Create a Virtual Environment
